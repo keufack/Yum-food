@@ -1,14 +1,54 @@
 import React from "react";
 import { TbArrowAutofitRight } from "react-icons/tb";
-import { mealData } from "./data/data";
+import { categories, mealData } from "./data/data";
+import { useState } from "react";
 const Meal = () => {
+  const [food, setFood] = useState(mealData);
+  const fillterCart = (category) => {
+    setFood(
+      mealData.filter((item) => {
+        return item.category === category;
+      })
+    );
+  };
+
   return (
     <div className="max-w-[1520px] m-auto px-4 py-12">
       <h1 className="text-orange-500 font-bold text-3xl text-center py-2">
         Our Meal
       </h1>
+
+      <div className="flex flex-col lg:flex-row justify-center">
+        <div className="flex justify-center md:justify-center">
+          <button
+            onClick={() => setFood(mealData)}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            All
+          </button>
+          <button
+            onClick={() => fillterCart("pizza")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            Pizza
+          </button>
+          <button
+            onClick={() => fillterCart("chicken")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            Chiken
+          </button>
+          <button
+            onClick={() => fillterCart("salad")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            Salad
+          </button>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-6 py-5">
-        {mealData.map((item) => (
+        {food.map((item) => (
           <MealCard
             name={item.name}
             image={item.image}

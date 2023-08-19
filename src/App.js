@@ -1,3 +1,4 @@
+import Category from "./Category";
 import Delivery from "./Delivery";
 import Featured from "./Featured";
 import Meal from "./Meal";
@@ -12,6 +13,7 @@ function App() {
       <Delivery />
       <TopPicks />
       <Meal />
+      <Category />
     </div>
   );
 }

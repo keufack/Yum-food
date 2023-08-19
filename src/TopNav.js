@@ -35,7 +35,7 @@ const TopNav = () => {
         />
       </div>
 
-      <button className="bg-orange-700 text-white hidden md:flex items-center py-2 rounded-full">
+      <button className="bg-orange-700 text-white hidden md:flex items-center py-2 rounded-full  hover:bg-white hover:text-orange-700 hover:border-orange-700">
         <BsCartPlusFill size={20} /> Cart
       </button>
       {sidenav ? (
