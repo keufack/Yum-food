@@ -1,6 +1,7 @@
 import Category from "./Category";
 import Delivery from "./Delivery";
 import Featured from "./Featured";
+import Footer from "./Footer";
 import Meal from "./Meal";
 import NewsLetter from "./NewsLetter";
 import TopNav from "./TopNav";
@@ -16,6 +17,7 @@ function App() {
       <Meal />
       <Category />
       <NewsLetter />
+      <Footer />
     </div>
   );
 }
