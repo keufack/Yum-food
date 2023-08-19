@@ -49,39 +49,31 @@ const Meal = () => {
 
       <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-6 py-5">
         {food.map((item) => (
-          <MealCard
-            name={item.name}
-            image={item.image}
-            id={item.id}
-            price={item.price}
-          />
+          <div
+            key={item.id}
+            className="border-none hover:scale-105 duration-300"
+          >
+            <img
+              alt={item.name}
+              src={item.image}
+              className="w-full h-[220px] object-cover rounded-lg"
+            />
+            <div className="flex justify-between py-2 px-2">
+              <p className="font-bold">{item.name}</p>
+              <p className="bg-orange-700 h-18 w-18 rounded-full -mt-10 text-white py-4 px-2 border-8 font-bold">
+                {item.price}
+              </p>
+            </div>
+            <div className="pl-2 py-4 -mt-7">
+              <p className="flex items-center text-indigo-600">
+                View More <TbArrowAutofitRight className="w-5 ml-2" />
+              </p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-const MealCard = (props) => {
-  const { name, image, id, price } = props;
-  return (
-    <div key={id} className="border-none hover:scale-105 duration-300">
-      <img
-        alt={name}
-        src={image}
-        className="w-full h-[220px] object-cover rounded-lg"
-      />
-      <div className="flex justify-between py-2 px-2">
-        <p className="font-bold">{name}</p>
-        <p className="bg-orange-700 h-18 w-18 rounded-full -mt-10 text-white py-4 px-2 border-8 font-bold">
-          {price}
-        </p>
-      </div>
-      <div className="pl-2 py-4 -mt-7">
-        <p className="flex items-center text-indigo-600">
-          View More <TbArrowAutofitRight className="w-5 ml-2" />
-        </p>
-      </div>
-    </div>
-  );
-};
 export default Meal;

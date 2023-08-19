@@ -2,6 +2,7 @@ import Category from "./Category";
 import Delivery from "./Delivery";
 import Featured from "./Featured";
 import Meal from "./Meal";
+import NewsLetter from "./NewsLetter";
 import TopNav from "./TopNav";
 import TopPicks from "./TopPicks";
 
@@ -14,6 +15,7 @@ function App() {
       <TopPicks />
       <Meal />
       <Category />
+      <NewsLetter />
     </div>
   );
 }
