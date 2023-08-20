@@ -36,7 +36,7 @@ const Meal = () => {
             onClick={() => fillterCart("chicken")}
             className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
           >
-            Chiken
+            Chicken
           </button>
           <button
             onClick={() => fillterCart("salad")}
